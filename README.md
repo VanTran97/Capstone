@@ -1,2 +1,2 @@
-# Capstone
+# Crypto Game
 Programming Project
