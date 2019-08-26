@@ -1,0 +1,20 @@
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: black;
+}
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+    text-align: center;
+}
+
+input[type=fname], input[type=lname], input[type=email], input[type=uname], input[type=password]{
+    position: relative;
+    left: 45%;
+}
+
+.button1 {
+  position: relative;
+  left: 47%;
+}
