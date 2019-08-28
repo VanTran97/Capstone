@@ -1,7 +1,7 @@
 {
   "name": "capstone",
   "version": "1.0.0",
-  "description": "",
+  "description": "Programming Project",
   "main": "app.js",
   "dependencies": {
     "chalk": "^2.4.2",
@@ -13,5 +13,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s3604175/Crypto-Game.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/s3604175/Crypto-Game/issues"
+  },
+  "homepage": "https://github.com/s3604175/Crypto-Game#readme"
 }
