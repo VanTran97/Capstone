@@ -40,5 +40,6 @@ const loadUsers = () => {
 }
 
 module.exports = {
-    registerUser: registerUser
+    registerUser: registerUser,
+    loginUser: loginUser
 }

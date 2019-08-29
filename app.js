@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const yargs = require ('yargs')
 const login = require('./login.js')
-//const getData = require('./get-data.js')
+const getData = require('./get-data.js')
 
 // Customise yargs version
 yargs.version('1.1.0')
@@ -53,6 +53,15 @@ yargs.command({
     },
     handler(argv){
         login.loginUser(argv.username, argv.password)
+    }
+})
+
+// Create get command
+yargs.command({
+    command: 'get',
+    describe: 'Get crypto data',
+    handler(){
+        getData.getData()
     }
 })
 
