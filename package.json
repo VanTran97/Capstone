@@ -1,0 +1,20 @@
+{
+  "name": "Crypto-Game",
+  "version": "1.0.0",
+  "description": "Programming Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s3604175/Crypto-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s3604175/Crypto-Game/issues"
+  },
+  "homepage": "https://github.com/s3604175/Crypto-Game#readme"
+}
