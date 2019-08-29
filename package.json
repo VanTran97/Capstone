@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/s3604175/Crypto-Game/issues"
   },
-  "homepage": "https://github.com/s3604175/Crypto-Game#readme"
+  "homepage": "https://github.com/s3604175/Crypto-Game#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "yargs": "^14.0.0"
+  }
 }
