@@ -13,6 +13,17 @@ const registerUser = (username, password, email) => {
         console.log('New user added!')
 }
 
+const loginUser = (username, password) => {
+    const users = loadUsers()
+    const findUser = users.find((user) => user.username === username && user.password === password)
+
+    if(findUser){
+        console.log('Logged in!')
+    } else {
+        console.log(chalk.red('Could not find user!'))
+    }
+}
+
 const saveUser = (users) => {
     const dataJSON = JSON.stringify(users)
     fs.writeFileSync('users.json', dataJSON)
