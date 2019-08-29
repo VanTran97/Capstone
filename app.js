@@ -34,4 +34,26 @@ yargs.command({
     }
 })
 
+// Create login command
+yargs.command({
+    command: 'login',
+    describe: 'Login',
+    builder: {
+        username: {
+            describe: 'User username',
+            demandOption: true,
+            type: 'string'
+        },
+
+        password: {
+            describe: 'User password',
+            demandOption: true,
+            type: 'string'
+        },
+    },
+    handler(argv){
+        login.loginUser(argv.username, argv.password)
+    }
+})
+
 yargs.parse()
