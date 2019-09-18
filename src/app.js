@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const getCryptoData = require('./utils/get-crypto-data.js')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -19,6 +20,9 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
+
+app.use(express.json())
+app.use(userRouter)
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -54,6 +58,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
