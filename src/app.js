@@ -52,13 +52,14 @@ app.get('/crypto', (req, res) => {
     })
 })
 
-app.get('*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        message: 'My 404 page',
-        name: groupName
-    })
-})
+// 404 Page
+// app.get('*', (req, res) => {
+//     res.render('404', {
+//         title: '404',
+//         message: 'My 404 page',
+//         name: groupName
+//     })
+// })
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
