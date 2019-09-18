@@ -1,5 +1,7 @@
 const path = require('path')
 const express = require('express')
+require('./db/mongoose')
+const userRouter = require('./routers/user')
 const hbs = require('hbs')
 const getCryptoData = require('./utils/get-crypto-data.js')
 
