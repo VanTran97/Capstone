@@ -25,7 +25,7 @@ class CryptoSearch extends Component {
               <option value="EUR">EUR</option>
               <option value="GBP">GBP</option>
             </select>
-            <button>Search</button>
+            <button className="crypto-search__button">Search</button>
           </form>
           <p id="message-1" />
           <p id="message-2" />
