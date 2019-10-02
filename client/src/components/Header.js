@@ -7,6 +7,7 @@ class Header extends Component {
         const option1 = 'Home';
         const option2 = 'Crypto Search';
         const option3 = 'About';
+        const option4 = 'Graph';
         return (
             <header className="header">
                 <div className="content-container">
@@ -23,6 +24,9 @@ class Header extends Component {
                             </NavLink>
                             <NavLink to="/about" activeClassName="is-active">
                                 {option3}
+                            </NavLink>
+                            <NavLink to="/graph" activeClassName="is-active">
+                                {option4}
                             </NavLink>
                         </div>
                     </div>

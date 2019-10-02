@@ -5,6 +5,7 @@ import AboutPage from '../components/AboutPage';
 import CryptoSearchPage from '../components/CryptoSearchPage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Graph from '../components/Graph';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const AppRouter = () => (
                 <Route path="/" component={HomePage} exact={true} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/cryptosearch" component={CryptoSearchPage} />
+                <Route path="/graph" component={Graph} />
             </Switch>
             <Footer />
         </div>
