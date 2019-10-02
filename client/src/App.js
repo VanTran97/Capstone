@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import CryptoSearch from './components/CryptoSearch';
+import './styles/styles.scss';
 
 class App extends Component {
   render() {
@@ -9,7 +9,6 @@ class App extends Component {
       <div className="wrapper">
         <Header />
         <div className="workspace">
-          <CryptoSearch />
         </div>
         <Footer />
       </div>

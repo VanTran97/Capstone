@@ -8,12 +8,16 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer>
-                <ul className="site-link">
-                    <li>
-                        &copy; {this.state.year} TeamName
-                    </li>
-                </ul>
+            <footer className="footer">
+                <div className="content-container">
+                    <div className="footer__content">
+                        <ul>
+                            <li>
+                                &copy; {this.state.year} TeamName
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </footer>
         );
     }
