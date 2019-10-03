@@ -32,29 +32,32 @@ class CryptoSearchPage extends Component {
 
   handleSubmit(event) {
     //alert('Crypto: ' + this.state.crypto + 'Currency: ' + this.state.currency);
-    this.setState({isSubmitted: true});
+    this.setState({ isSubmitted: true });
     event.preventDefault();
   }
 
   render() {
     return (
       <div className="crypto-search">
-        <p>Get Current Cryptocurrency Rate</p>
         <form onSubmit={this.handleSubmit}>
-          <select className="select-css" id="select-crypto" onChange={this.handleCryptoChange}>
-            <option value disabled selected>Select Crypto</option>
-            <option value="BTC">Bitcoin</option>
-            <option value="BCH">Bitcoin Cash</option>
-            <option value="LTC">Litecoin</option>
-            <option value="ETH">Ethereum</option>
-          </select>
-          <select className="select-css" id="select-currency" onChange={this.handleCurrencyChange}>
-            <option value disabled selected>Select Currency</option>
-            <option value="USD">USD</option>
-            <option value="AUD">AUD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-          </select>
+          <div className="crypto-select">
+            <select className="select-css" id="select-crypto" onChange={this.handleCryptoChange}>
+              <option value disabled selected>Select Crypto</option>
+              <option value="BTC">Bitcoin</option>
+              <option value="BCH">Bitcoin Cash</option>
+              <option value="LTC">Litecoin</option>
+              <option value="ETH">Ethereum</option>
+            </select>
+          </div>
+          <div className="currency-select">
+            <select className="select-css" id="select-currency" onChange={this.handleCurrencyChange}>
+              <option value disabled selected>Select Currency</option>
+              <option value="USD">USD</option>
+              <option value="AUD">AUD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+            </select>
+          </div>
           <button className="crypto-search__button">Search</button>
         </form>
         {this.state.isSubmitted && <CryptoSearch crypto={this.state.crypto} currency={this.state.currency} />}

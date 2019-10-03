@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Loader from 'react-loader-spinner';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 class CryptoSearch extends Component {
     constructor(props) {
@@ -33,7 +35,15 @@ class CryptoSearch extends Component {
             return <p>{error.message}</p>;
         }
         if (isLoading) {
-            return <p>Loading ...</p>;
+            return (
+                <Loader
+                type="ThreeDots"
+                color="#000000"
+                height={40}
+                width={40}
+
+             />
+            );
         }
         return (
             <div>
