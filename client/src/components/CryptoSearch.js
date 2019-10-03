@@ -1,36 +1,47 @@
 import React, { Component } from 'react';
 
 class CryptoSearch extends Component {
-    constructor(){
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            rateData: [],
+            rate: [],
+            timeStamp: [],
+            isLoading: false,
+            error: null,
         };
     }
 
-    // componentDidMount() {
-    //     fetch('')
-    //     .then(results => {
-    //         return results.json;
-    //     }).then(data => {
-    //         let rateData = data.results.map((rate) => {
-    //             return(
-    //                 <div key={rate.results}></div>
-    //             )
-    //         })
-    //         this.setState({rate:rateData});
-    //         console.log("rate", this.state);
-    //     })
-    // }
+    componentDidMount() {
+        this.setState({ isLoading: true });
+        var url = 'https://rest.coinapi.io/v1/exchangerate/' + this.props.crypto + '/' + this.props.currency + '?apikey=67FA93DD-C576-4CAE-9DC6-5B15559C436B'
 
-    render() {
-        return (
-            <div>
-                <p>a</p>
-            </div>
-        )
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Error, please try again');
+                }
+            })
+            .then(data => this.setState({ rate: data.rate, timeStamp: data.time, isLoading: false }))
+            .catch(error => this.setState({ error, isLoading: false }));
     }
 
+    render() {
+        const { rate, timeStamp, isLoading, error } = this.state;
+        if (error) {
+            return <p>{error.message}</p>;
+        }
+        if (isLoading) {
+            return <p>Loading ...</p>;
+        }
+        return (
+            <div>
+                <p>{rate}</p>
+                <p>{'Rate correct as of: ' + timeStamp}</p>
+            </div>
+        );
+    }
 }
 
 export default CryptoSearch;
