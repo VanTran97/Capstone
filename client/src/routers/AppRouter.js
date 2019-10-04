@@ -5,6 +5,8 @@ import AboutPage from '../components/AboutPage';
 import CryptoSearchPage from '../components/CryptoSearchPage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Register from '../components/Register';
+import Login from '../components/Login';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -16,6 +18,8 @@ const AppRouter = () => (
                         <Route path="/" component={HomePage} exact={true} />
                         <Route path="/about" component={AboutPage} />
                         <Route path="/cryptosearch" component={CryptoSearchPage} />
+                        <Route path="/register" component={Register} />
+                        <Route path="/login" component={Login} />
                     </Switch>
                 </div>
             </div>

@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   constructor(props) {
-    super(props)
-    this.state = {}
-    this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
-    this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this);
-  }
-
-  handleLoginSubmit(event) {
-    event.preventDefault();
-    alert('login');
-  }
-
-  handleRegisterSubmit(event) {
-    event.preventDefault();
-    alert('register');
+    super(props);
+    this.state = {};
   }
 
   render() {
     return (
       <div>
-        <div>
-          <button className="login-button" onClick={this.handleLoginSubmit}>Login</button>
+        <div className="login-button">
+          <Link to="/login" onClick={this.handleLoginSubmit}>Login</Link>
         </div>
-        <div>
-          <button className="register-button" onClick={this.handleRegisterSubmit}>Register</button>
+        <div className="register-button">
+          <Link to="/register">Register</Link>
         </div>
       </div>
     );
