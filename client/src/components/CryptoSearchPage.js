@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import CryptoSearch from './CryptoSearch';
+import withAuth from './withAuth';
 
 class CryptoSearchPage extends Component {
   constructor(props) {
@@ -68,4 +69,4 @@ class CryptoSearchPage extends Component {
   }
 }
 
-export default CryptoSearchPage;
+export default withAuth(CryptoSearchPage);
