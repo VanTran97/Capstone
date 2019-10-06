@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
+import AuthHelperMethods from './AuthHelperMethods';
 
 class Header extends Component {
+    Auth = new AuthHelperMethods();
     render() {
         const title = 'Crypto Game';
         const option1 = 'Home';
@@ -18,9 +20,10 @@ class Header extends Component {
                             <NavLink to="/" activeClassName="is-active">
                                 {option1}
                             </NavLink>
-                            <NavLink to="/cryptosearch" activeClassName="is-active">
-                                {option2}
-                            </NavLink>
+                            {this.Auth.loggedIn()
+                                && <NavLink to="/cryptosearch" activeClassName="is-active">
+                                    {option2}
+                                </NavLink>}
                             <NavLink to="/about" activeClassName="is-active">
                                 {option3}
                             </NavLink>

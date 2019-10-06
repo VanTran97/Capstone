@@ -4,7 +4,12 @@ const User = require('../models/user')
 const auth = require('../middleware/auth')
 const router = new express.Router()
 
-router.use(cors())
+router.use(cors());
+
+router.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization', 'Access-Control-Allow-Origin:*');
+    next();
+  });
 
 // Create user
 router.post('/users', async (req, res) => {
@@ -63,7 +68,7 @@ router.get('/users/me', auth, async (req, res) => {
 // Update user
 router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['name', 'email', 'password', 'age']
+    const allowedUpdates = ['username', 'email', 'password']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {

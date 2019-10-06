@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const userSchema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
         required: true,
         trim: true
@@ -17,14 +17,6 @@ const userSchema = new mongoose.Schema({
         validate(value) {
             if (!validator.isEmail(value)) {
                 throw new Error('Email is invalid')
-            }
-        }
-    }, age: {
-        type: Number,
-        default: 0,
-        validate(value) {
-            if (value < 0) {
-                throw new Error('Age must be a positive number')
             }
         }
     }, password: {
@@ -60,7 +52,7 @@ userSchema.methods.toJSON = function () {
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this
-    const token = jwt.sign({ _id: user.id.toString() }, 'thisismyprivatekey')
+    const token = jwt.sign({ _id: user.id.toString(), username: user.username }, 'thisismyprivatekey')
 
     user.tokens = user.tokens.concat({ token })
     await user.save()

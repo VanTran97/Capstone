@@ -1,64 +1,103 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import AuthHelperMethods from './AuthHelperMethods';
+import Header from './Header';
+import axios from "axios";
 import { Link } from 'react-router-dom';
 
-class Register extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            password: '',
-        };
+export default class Register extends Component {
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        
+    Auth = new AuthHelperMethods();
+    state = {
+        name: "",
+        email: "",
+        password: ""
     }
 
-    handleChange(event) {
-        const name = event.target.name;
-        const value = event.target.value;
-    
-        this.setState({
-          [name]: value
+    _handleChange = (e) => {
+
+        this.setState(
+            {
+                [e.target.name]: e.target.value
+            }
+        )
+    }
+
+    handleFormSubmit = (e) => {
+
+        e.preventDefault();
+
+        axios.post("http://localhost:3001/users/", {
+            username: this.state.name,
+            email: this.state.email,
+            password: this.state.password
+        }).then((data) => {
+            console.log(data);
+            this.props.history.replace('/login');
         })
-      }
-    
-      handleSubmit(event) {
-        event.preventDefault();
-        this.props.onFormSubmit(this.state);
-        this.setState({
-            name: '',
-            email: '',
-            password: '',
-        });
-      }
+    }
+
+    componentDidMount() {
+        console.log(this.Auth.loggedIn());
+        if (this.Auth.loggedIn()) {
+            this.props.history.push('/dashboard')
+        }
+    }
 
     render() {
         return (
-            <div className="register-content">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="name-content">
-                        <div>
-                            <input type="text" value={this.state.name} name="name" placeholder="Name" className="register-input" onChange={this.handleChange}></input>
-                        </div>
+            <React.Fragment>
+                <div className="login-content">
+                <Header />
+                    <div className="login-header">
+                        <h1>Register</h1>
                     </div>
-                    <div className="email-content">
-                        <div>
-                            <input type="email" value={this.state.email} name="email" placeholder="Email" className="register-input" onChange={this.handleChange}></input>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="name-content">
+                            <div>
+                                <input
+                                    className="register-input"
+                                    placeholder="Name"
+                                    name="name"
+                                    type="text"
+                                    onChange={this._handleChange}
+                                    value={this.state.name}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="password-content">
-                        <div>
-                            <input type="password" value={this.state.password} name="password" placeholder="Password" className="register-input" onChange={this.handleChange}></input>
+                        <div className="email-content">
+                            <div>
+                                <input
+                                    className="register-input"
+                                    placeholder="Email"
+                                    name="email"
+                                    type="email"
+                                    onChange={this._handleChange}
+                                    value={this.state.email}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <input type="submit" value="Submit" className="register-submit-button"></input>
-                    <Link to="/" className="register-back-button">Back</Link>
-                </form>
-            </div>
+                        <div className="password-content">
+                            <div>
+                                <input
+                                    className="register-input"
+                                    placeholder="Password"
+                                    name="password"
+                                    type="password"
+                                    onChange={this._handleChange}
+                                    value={this.state.password}
+                                />
+                            </div>
+                        </div>
+                        <input
+                            className="register-submit-button"
+                            type="submit"
+                            onClick={this.handleFormSubmit}
+                            value="Register"
+                        />
+                    </form>
+                </div>
+                <Link className="link" to="/login">Already have an account? <span className="link-register">Login</span></Link>
+            </React.Fragment>
         );
     }
 }
-
-export default Register;

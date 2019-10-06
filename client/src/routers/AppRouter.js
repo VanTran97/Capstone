@@ -1,25 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import HomePage from '../components/HomePage';
-import AboutPage from '../components/AboutPage';
+import Home from '../components/Home';
+import About from '../components/About';
 import CryptoSearchPage from '../components/CryptoSearchPage';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
-import RegisterPage from '../components/RegisterPage';
+import Register from '../components/Register';
 import Login from '../components/Login';
 
 const AppRouter = () => (
     <BrowserRouter>
         <div>
             <div className="main-content">
-                <Header />
                 <div className="body-content">
                     <Switch>
-                        <Route path="/" component={HomePage} exact={true} />
-                        <Route path="/about" component={AboutPage} />
-                        <Route path="/cryptosearch" component={CryptoSearchPage} />
-                        <Route path="/register" component={RegisterPage} />
-                        <Route path="/login" component={Login} />
+                        <Route path="/" component={Home} exact={true} />
+                        <Route path="/about" component={About} exact={true} />
+                        <Route path="/cryptosearch" component={CryptoSearchPage} exact={true} />
+                        <Route path="/register" component={Register} exact={true} />
+                        <Route path="/login" component={Login} exact={true} />
                     </Switch>
                 </div>
             </div>

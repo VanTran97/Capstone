@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import CryptoSearch from './CryptoSearch';
 
 class CryptoSearchPage extends Component {
@@ -39,6 +40,7 @@ class CryptoSearchPage extends Component {
   render() {
     return (
       <div className="crypto-search">
+        <Header />
         <form onSubmit={this.handleSubmit}>
           <div className="crypto-select">
             <select className="select-css" id="select-crypto" onChange={this.handleCryptoChange}>
