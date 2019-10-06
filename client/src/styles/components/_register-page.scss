@@ -1,0 +1,20 @@
+$green5: #40c057;
+$red5: #fa5252;
+
+.register-page-alert-box {
+    min-height: 18px;
+}
+
+.register-page-alert-success {
+    color: $green5;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.register-page-alert-fail {
+    color: $red5;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: bold;
+}

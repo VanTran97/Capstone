@@ -1,10 +1,12 @@
+$grey6: #868e96;
+
 // .footer{     
 //     position: sticky; 
 //     bottom: 0;
 // }
 
 .footer__content {
-    color: #888888;
+    color: $grey6;
     border-top: 1px solid #EEEEEE;
     margin-top: 48px;
     padding: 16px 0;

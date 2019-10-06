@@ -1,19 +1,12 @@
-.register-label {
-    border: 1px solid #777777;
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    background: #ffffff;
-    color: #000000;
-    line-height: 1.3;
-    margin: 4px 0 4px 0;
-    font-size: 11px;
-    padding: 8px;
-}
+$grey8: #343a40;
+$grey7: #495057;
+$grey6: #868e96;
 
 .register-input {
-    border: 1px solid #777777;
+    border: 1px solid $grey8;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    background: #ffffff;
-    color: #000000;
+    background: white;
+    color: $grey8;
     line-height: 1.3;
     margin: 4px 0 4px 0;
     padding: 8px;
@@ -27,11 +20,23 @@
 }
 
 .register-submit-button {
-    border: 1px solid #777777;
+    border: 1px solid $grey8;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    background: #ffffff;
-    color: #000000;
+    background: white;
+    color: $grey8;
     line-height: 1.3;
     margin: 4px 0 4px 0;
     padding: 8px;
+}
+
+.register-back-button {
+    text-decoration: none;
+    font-size: 11px;
+    border: 1px solid $grey8;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    background: white;
+    color: $grey8;
+    line-height: 1.3;
+    margin: 4px 0 4px 16px;
+    padding: 9px;
 }

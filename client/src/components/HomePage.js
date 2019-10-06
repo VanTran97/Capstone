@@ -9,7 +9,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home-content">
         <div className="login-button">
           <Link to="/login" onClick={this.handleLoginSubmit}>Login</Link>
         </div>
