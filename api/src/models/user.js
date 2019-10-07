@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const Account = require('./account')
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -36,6 +37,12 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     }]
+})
+
+userSchema.virtual('accounts', {
+    ref: 'Account',
+    localField: '_id',
+    foreignField: 'owner'
 })
 
 // Methods on individual user instances
@@ -85,6 +92,13 @@ userSchema.pre('save', async function (next) {
         user.password = await bcrypt.hash(user.password, 8)
     }
 
+    next()
+})
+
+// Delete user account(s) when user is removed
+userSchema.pre('remove', async function (next) {
+    const user = this
+    await Account.deleteMany({ owner: user._id })
     next()
 })
 
