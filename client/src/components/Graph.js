@@ -20,12 +20,11 @@ class Body extends Component{
             initValue: 0,
             dataSource : {
                 "chart": {
-                    "caption": "Bitcoin Ticker",
+                    "caption": "Bitcoin",
                     "subCaption": "",
                     "xAxisName": "Local Time",
                     "yAxisName": "AUD",
                     "numberPrefix": "$",
-                    "refreshinterval": "2",
                     "slantLabels": "1",
                     "numdisplaysets": "10",
                     "labeldisplay": "rotate",
@@ -48,7 +47,7 @@ class Body extends Component{
         this.chartConfigs = {
             type: 'realtimeline',
             renderAt: 'container',
-            width: '100%',
+            width: '110%',
             height: '350',
             dataFormat: 'json'
         };

@@ -16,6 +16,7 @@ const AppRouter = () => (
                 <Route path="/about" component={AboutPage} />
                 <Route path="/cryptosearch" component={CryptoSearchPage} />
                 <Route path="/graph" component={Graph} />
+                <Route path="/header" component={Header} />
             </Switch>
             <Footer />
         </div>
