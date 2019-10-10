@@ -1,7 +1,40 @@
-.table th, td {
-    border: 1px solid black;
+.table {
+    border-collapse: collapse;
 }
 
-.coin-logo {
+.row-logo {
     width: 25px;
+}
+
+.table-row:nth-child(odd) {
+    background-color: #f1f3f5;
+}
+
+.row-logo-name {
+    font-family: arial;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+}
+
+.row-rate {
+    font-family: arial;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.row-buy-sell {
+    width: 60%;
+    padding: 8px;
+}
+
+.row-buy-button {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-name {
+    text-align: center;
+    width: initial;
 }

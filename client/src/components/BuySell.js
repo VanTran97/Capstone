@@ -69,6 +69,7 @@ class BuySell extends Component {
                         <thead>
                             <tr>
                                 <th>Coin</th>
+                                <th></th>
                                 <th>Rate</th>
                                 <th></th>
                             </tr>
