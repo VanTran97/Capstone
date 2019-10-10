@@ -60,7 +60,9 @@ accountSchema.methods.addAsset = async function (data) {
         name: data.name,
         amount: data.amount
     })
-    await account.save()
+    try {
+        await account.save()
+    } catch (error) {}
 }
 
 accountSchema.methods.addTransaction = async function (data) {
@@ -72,7 +74,10 @@ accountSchema.methods.addTransaction = async function (data) {
         name: data.name,
         amount: data.amount
     })
-    await account.save()
+    try {
+        await account.save()
+    } catch (error) {}
+
 }
 
 const Account = mongoose.model('Account', accountSchema)

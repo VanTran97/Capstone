@@ -1,6 +1,12 @@
-import React, { Component } from 'react';
+import React, {
+    Component
+} from 'react';
 import AuthHelpers from "./AuthHelpers";
-import { updateBalance, addTransaction, addAsset } from '../apiHelpers/accountModel';
+import {
+    updateBalance,
+    addTransaction,
+    addAsset
+} from '../apiHelpers/accountModel';
 
 class Buy extends Component {
     constructor(props) {
@@ -17,61 +23,67 @@ class Buy extends Component {
     Auth = new AuthHelpers()
 
     handleChange = (e) => {
-        this.setState(
-            {
-                [e.target.name]: e.target.value
-            }
-        )
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault()
 
         let acc = this.state.account
         let toBuy = parseFloat(this.state.amtToBuy)
         let newBalance = acc.balance - toBuy
 
-        updateBalance(acc._id, newBalance)
-            .then(
-                addTransaction(
-                    acc._id,
-                    this.state.type,
-                    this.state.crypto.base,
-                    this.state.crypto.name,
-                    toBuy
-                )
-            )
-            .then(
-                addAsset(
-                    acc._id,
-                    this.state.crypto.base,
-                    this.state.crypto.name,
-                    toBuy / this.state.crypto.rate
-                )
-            )
-            .then(
-                this.setState({ amtToBuy: '' })
-            )
+        await addTransaction(
+            acc._id,
+            this.state.type,
+            this.state.crypto.base,
+            this.state.crypto.name,
+            toBuy
+        )
+        await addAsset(
+            acc._id,
+            this.state.crypto.base,
+            this.state.crypto.name,
+            toBuy / this.state.crypto.rate
+        )
+        await updateBalance(acc._id, newBalance)
+        console.log('seetstat')
+        this.setState({
+            account: {
+                _id: this.state.account._id,
+                balance: newBalance,
+                owner: this.state.account.owner
+            },
+            amtToBuy: ''
+        })
     }
 
     componentDidMount() {
         console.log('mount: ' + JSON.stringify(this.state))
     }
 
+    componentDidUpdate(){
+        console.log('componentDidUpdate')
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount')
+    }
+
     render() {
         console.log('render: ' + JSON.stringify(this.state))
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        className="buy-input"
-                        placeholder="Amount to Purchase"
+                <form onSubmit={this.handleSubmit} >
+                    <input className="buy-input"
+                        placeholder="Purchase in AUD"
                         name="amtToBuy"
                         type="text"
                         pattern="^[+]?([.]\d+|\d+[.]?\d*)$"
                         onChange={this.handleChange}
-                        value={this.state.amtToBuy}
-                    />
+                        value={this.state.amtToBuy} />
                     <input type="submit" value="Buy" />
                 </form>
             </div>
