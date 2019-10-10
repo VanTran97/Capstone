@@ -2,19 +2,35 @@ import React, { Component } from 'react';
 import Header from './Header';
 import withAuth from './withAuth';
 import BuySellRow from './BuySellRow';
-import { getCryptos } from '../actions/cryptos';
+import { getCryptos } from '../apiHelpers/cryptoModel';
+import { getAccount } from '../apiHelpers/accountModel';
 
 class BuySell extends Component {
     _isMounted = false;
     constructor() {
         super();
         this.state = {
+            account: {
+                _id: '',
+                balance: undefined,
+                owner: ''
+            },
             cryptos: null
         }
     }
 
     componentDidMount() {
         this._isMounted = true;
+        getAccount()
+            .then((result) => {
+                this.setState({
+                    account: {
+                        _id: result.data._id,
+                        balance: result.data.balance,
+                        owner: result.data.owner
+                    }
+                })
+            })
         getCryptos()
             .then((result) => {
                 this.setState({ cryptos: result.data });
@@ -30,10 +46,14 @@ class BuySell extends Component {
             this.state.cryptos.map((crypto) =>
                 <BuySellRow
                     key={crypto._id}
-                    name={crypto.name}
-                    base={crypto.base}
-                    currency={crypto.currency}
-                    rate={crypto.rate} />
+                    account={this.state.account}
+                    crypto={{
+                        name: crypto.name,
+                        base: crypto.base,
+                        currency: crypto.currency,
+                        rate: crypto.rate
+                    }}
+                />
             )
         );
     }

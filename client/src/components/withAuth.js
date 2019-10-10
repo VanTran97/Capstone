@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import AuthHelperMethods from "./AuthHelperMethods";
+import AuthHelpers from "./AuthHelpers";
 
 /* A higher order component is frequently written as a function that returns a class. */
 export default function withAuth(AuthComponent) {
-  const Auth = new AuthHelperMethods();
+  const Auth = new AuthHelpers();
 
   return class AuthWrapped extends Component {
     state = {

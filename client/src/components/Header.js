@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
-import AuthHelperMethods from './AuthHelperMethods';
+import AuthHelpers from './AuthHelpers';
 import Logout from './Logout';
 
 class Header extends Component {
-    Auth = new AuthHelperMethods();
+    Auth = new AuthHelpers();
     _handleLogout = () => {
         this.Auth.logout()
         // this.props.history.replace('/login');

@@ -16,9 +16,5 @@ export const getCryptos = () => {
                     throw new Error(JSON.stringify(response));
                 }
             })
-            .then(result => {
-                return Promise.resolve(result);
-            })
-            .catch(error => console.log(error))
     );
 }

@@ -9,11 +9,11 @@ const accountSchema = new mongoose.Schema({
     },
     assets: [{
         required: false,
-        asset_id: {
+        base: {
             type: String,
             required: true
         },
-        asset_name: {
+        name: {
             type: String,
             required: true
         },
@@ -28,11 +28,11 @@ const accountSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        asset_id: {
+        base: {
             type: String,
             required: true
         },
-        asset_name: {
+        name: {
             type: String,
             required: true
         },
@@ -56,8 +56,8 @@ accountSchema.methods.addAsset = async function (data) {
     const account = this
 
     account.assets = account.assets.concat({
-        asset_id: data.asset_id,
-        asset_name: data.asset_name,
+        base: data.base,
+        name: data.name,
         amount: data.amount
     })
     await account.save()
@@ -68,8 +68,8 @@ accountSchema.methods.addTransaction = async function (data) {
 
     account.transactions = account.transactions.concat({
         type: data.type,
-        asset_id: data.asset_id,
-        asset_name: data.asset_name,
+        base: data.base,
+        name: data.name,
         amount: data.amount
     })
     await account.save()

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 
 /* Once the 'Authservice' and 'withAuth' componenets are created, import them into Home.js */
-import AuthHelperMethods from './AuthHelperMethods';
+import AuthHelpers from './AuthHelpers';
 
 //Our higher order component
 import withAuth from './withAuth';
@@ -13,7 +13,7 @@ class Home extends Component {
     username: ''
   }
   /* Create a new instance of the 'AuthHelperMethods' compoenent*/
-  Auth = new AuthHelperMethods();
+  Auth = new AuthHelpers();
 
   _handleLogout = () => {
     this.Auth.logout()

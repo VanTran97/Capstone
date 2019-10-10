@@ -1,7 +1,7 @@
 import decode from "jwt-decode";
 import axios from 'axios';
 
-export default class AuthHelperMethods {
+export default class AuthHelpers {
 
   login = (email, password) => {
     // Get a token from api server using the fetch api

@@ -1,24 +1,32 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Buy from './Buy';
 
 class BuySellRow extends Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            display: false
+        }
+    }
+
+    toggleDisplay = () => {
+        this.setState({
+            display: !this.state.display
+        })
     }
 
     render() {
-        const coinNameLow = this.props.name.toLowerCase().replace(/\s/g,'');
+        const coinNameLow = this.props.crypto.name.toLowerCase().replace(/\s/g, '');
         return (
             <tr>
                 <td>
                     <img className="coin-logo" src={require('../assets/' + coinNameLow + '.png')} alt={coinNameLow + " logo"} />
-                    <span>{this.props.name}</span>
+                    <span>{this.props.crypto.name}</span>
                 </td>
-                <td>{this.props.rate.toFixed(2)}</td>
+                <td>{this.props.crypto.rate.toFixed(2)}</td>
                 <td>
-                    <Link to="/buy" value="Buy" name={this.props.name}>Buy</Link>
-                    <button value="Sell">Sell</button>
+                    {this.state.display && <Buy {...this.props}/>}
+                    <button value="Buy" onClick={this.toggleDisplay}>{!this.state.display ? 'Buy' : 'Back'}</button>
                 </td>
             </tr>
         );
