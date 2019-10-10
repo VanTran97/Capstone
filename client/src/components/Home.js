@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Newz from './Newz';
 
 /* Once the 'Authservice' and 'withAuth' componenets are created, import them into Home.js */
 import AuthHelperMethods from './AuthHelperMethods';
@@ -37,6 +38,7 @@ class Home extends Component {
             <div className="top-section">
               <h1>Welcome, {name}</h1>
             </div>
+            <Newz />
             <div className="bottom-section">
               <button onClick={this._handleLogout}>LOGOUT</button>
             </div>
