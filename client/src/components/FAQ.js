@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Header from './Header';
 
 class FAQ extends Component {
     render() {
         return (
-           <div className='wrap'>
-            
+           <div>
+            <Header />
             <h1>
             FAQ Page Text Here
             </h1>
