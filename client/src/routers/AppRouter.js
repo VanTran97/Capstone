@@ -6,6 +6,7 @@ import CryptoSearchPage from '../components/CryptoSearchPage';
 import Footer from '../components/Footer';
 import Register from '../components/Register';
 import Login from '../components/Login';
+import FAQ from '.../components/faqPage';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -18,6 +19,7 @@ const AppRouter = () => (
                         <Route path="/cryptosearch" component={CryptoSearchPage} exact={true} />
                         <Route path="/register" component={Register} exact={true} />
                         <Route path="/login" component={Login} exact={true} />
+                        <Route path="/faq" component={faqPage} exact={true} />
                     </Switch>
                 </div>
             </div>
