@@ -5,9 +5,6 @@ $cyan5: #22b8cf;
     border-collapse: collapse;
 }
 
-.table-row {
-}
-
 .row-logo {
     width: 25px;
 }
@@ -85,7 +82,7 @@ $cyan5: #22b8cf;
     font-family: arial;
     font-size: 12px;
     text-align: left;
-    width: 30%;
+    width: 100px;
 }
 
 .row-rate {
@@ -112,4 +109,8 @@ $cyan5: #22b8cf;
 
 .balance-box {
     margin-bottom: 16px;
+}
+
+.th-rate {
+    text-align: left;
 }

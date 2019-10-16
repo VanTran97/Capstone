@@ -71,9 +71,9 @@ class BuySell extends Component {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Coin</th>
+                                <th className="th-coin">Coin</th>
                                 <th></th>
-                                <th>Rate</th>
+                                <th className="th-rate">Rate</th>
                                 <th></th>
                             </tr>
                         </thead>

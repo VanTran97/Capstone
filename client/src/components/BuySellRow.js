@@ -62,7 +62,6 @@ class BuySellRow extends Component {
                     <div className="row-name-container">
                         <span>{this.props.crypto.name}</span>
                     </div>
-
                 </td>
                 <td className="row-rate">{this.props.crypto.rate.toFixed(2)}</td>
                 {d.buy && d.sell && !d.back && <td className="row-buy-sell-back"><button className="row-buy-button" value="Buy" onClick={this.toggleDisplay}>{'Buy ' + this.props.crypto.base}</button></td>}

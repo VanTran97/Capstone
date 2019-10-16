@@ -1,5 +1,8 @@
-$grey8: #343a40;
+$cyan5: #22b8cf;
 $grey6: #868e96;
+$grey3: #dee2e6;
+$grey8: #343a40;
+$grey1: #f1f3f5;
 
 .header {
   // position: sticky; 
@@ -18,9 +21,18 @@ $grey6: #868e96;
   }
 
   .header__nav {
+    background-color: $grey1;
+    padding: 16px;
     a {
       color: $grey6;
       margin-right: 16px;
       text-decoration: none;
+      padding: 16px;
+    }
+  }
+
+  .header__nav {
+    a:hover {
+      background-color: $grey3;
     }
   }

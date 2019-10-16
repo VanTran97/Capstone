@@ -13,7 +13,7 @@ class Footer extends Component {
                     <div className="footer__content">
                         <ul>
                             <li>
-                                &copy; {this.state.year} TeamName
+                                &copy; {this.state.year} Crypto-Game
                             </li>
                         </ul>
                     </div>
