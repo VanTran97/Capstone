@@ -5,7 +5,7 @@ const accountSchema = new mongoose.Schema({
     balance: {
         type: Number,
         required: false,
-        default: 1000
+        default: 1000000
     },
     assets: [{
         required: false,

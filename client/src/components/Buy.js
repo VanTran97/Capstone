@@ -8,6 +8,11 @@ import {
     addAsset
 } from '../apiHelpers/accountModel';
 
+//
+//  TODO: Justin
+//
+//  Leaderboard is ranked by total asset value or 
+
 class Buy extends Component {
     constructor(props) {
         super(props);
@@ -76,7 +81,7 @@ class Buy extends Component {
         console.log('render: ' + JSON.stringify(this.state))
         return (
             <div>
-                <form onSubmit={this.handleSubmit} >
+                <form className="buy" onSubmit={this.handleSubmit} >
                     <input className="buy-input"
                         placeholder="Purchase in AUD"
                         name="amtToBuy"
@@ -84,7 +89,7 @@ class Buy extends Component {
                         pattern="^[+]?([.]\d+|\d+[.]?\d*)$"
                         onChange={this.handleChange}
                         value={this.state.amtToBuy} />
-                    <input type="submit" value="Buy" />
+                    <input className="buy-submit" type="submit" value="Buy" />
                 </form>
             </div>
         );

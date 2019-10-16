@@ -37,8 +37,9 @@ class Login extends Component {
                 }
                 this.props.history.replace('/');
             })
-            .catch(err => {
-                alert(err);
+            .then((result) => {
+                this.Auth.createAccount();
+                return result;
             })
     }
 

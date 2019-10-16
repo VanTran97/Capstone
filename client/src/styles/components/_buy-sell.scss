@@ -1,5 +1,11 @@
+$grey8: #343a40;
+$cyan5: #22b8cf;
+
 .table {
     border-collapse: collapse;
+}
+
+.table-row {
 }
 
 .row-logo {
@@ -12,29 +18,86 @@
 
 .row-logo-name {
     font-family: arial;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
+    font-size: 12px;
+    // display: flex;
+    // flex-direction: row;
     padding: 8px;
 }
 
-.row-rate {
+.buy-input {
+    padding: 6px 10px 6px 10px;
+    color: #868e96;
     font-family: arial;
-    font-size: 14px;
-    padding: 8px;
+    font-size: 11px;
+    border: 1px solid #dee2e6;
+    border-radius: 2px;
+    background-color: white;
 }
 
-.row-buy-sell {
-    width: 60%;
-    padding: 8px;
+.buy-submit {
+    color: white;
+    font-family: arial;
+    font-size: 11px;
+    border: 1px solid $cyan5;
+    border-radius: 2px;
+    background-color: $cyan5;
+    padding: 6px 10px 6px 10px;
+    margin: 0 8px 0 16px;
+}
+
+.row-buy-sell-back {
+    padding: 8px 4px 8px 4px;
 }
 
 .row-buy-button {
-    display: flex;
-    flex-direction: row;
+    color: white;
+    font-family: arial;
+    font-size: 11px;
+    border: 1px solid $cyan5;
+    border-radius: 2px;
+    background-color: $cyan5;
+    padding: 6px 10px 6px 10px;
+    margin-right: 4px;
+}
+
+.row-sell-button {
+    color: $cyan5;
+    font-family: arial;
+    font-size: 11px;
+    border: 1px solid $cyan5;
+    border-radius: 2px;
+    background-color: white;
+    padding: 6px 10px 6px 10px;
+}
+
+.row-back-button {
+    color: #868e96;
+    font-family: arial;
+    font-size: 11px;
+    border: 1px solid #dee2e6;
+    border-radius: 2px;
+    background-color: white;
+    padding: 6px 10px 6px 10px;
 }
 
 .row-name {
-    text-align: center;
-    width: initial;
+    color: $grey8;
+    font-family: arial;
+    font-size: 12px;
+    text-align: left;
+    width: 30%;
+}
+
+.row-rate {
+    color: $grey8;
+    font-family: arial;
+    font-size: 12px;
+    text-align: left;
+    width: 20%;
+    padding: 8px;
+}
+
+.buy {
+    display: flex;
+    flex-direction: row;
 }

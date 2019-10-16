@@ -2,6 +2,9 @@ const express = require('express');
 const Account = require('../models/account');
 const auth = require('../middleware/auth');
 const router = new express.Router();
+const cors = require('cors')
+
+router.use(cors());
 
 // Create account
 router.post('/accounts', auth, async (req, res) => {

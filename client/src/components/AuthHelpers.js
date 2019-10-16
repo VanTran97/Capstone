@@ -17,6 +17,22 @@ export default class AuthHelpers {
     });
   };
 
+  createAccount = () => {
+    var options = {
+      method: 'POST',
+      // Clears all tokens from DB
+      // To clear only current token, use /logout
+      url: 'http://localhost:3001/accounts',
+      headers: {
+        'Authorization': this.getToken(),
+      },
+    };
+    axios(options)
+      .then((data) => {
+        console.log(data);
+      })
+  };
+
   loggedIn = () => {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken(); // Getting token from localstorage

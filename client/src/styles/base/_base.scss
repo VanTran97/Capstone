@@ -3,7 +3,7 @@ $grey8: #343a40;
 body {
     color: $grey8;
     font-family: arial;
-    max-width: 650px;
+    max-width: 750px;
     margin: 0 auto;
     padding: 0 16px;
 
@@ -11,8 +11,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-
 
 .main-content {
   flex-grow: 1;
