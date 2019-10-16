@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import AuthHelperMethods from './AuthHelperMethods';
+import AuthHelpers from './AuthHelpers';
 import Header from './Header';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
 export default class Register extends Component {
-
-    Auth = new AuthHelperMethods();
+    Auth = new AuthHelpers();
     state = {
         name: "",
         email: "",
@@ -14,7 +13,6 @@ export default class Register extends Component {
     }
 
     _handleChange = (e) => {
-
         this.setState(
             {
                 [e.target.name]: e.target.value
@@ -23,9 +21,7 @@ export default class Register extends Component {
     }
 
     handleFormSubmit = (e) => {
-
         e.preventDefault();
-
         axios.post("http://localhost:3001/users/", {
             username: this.state.name,
             email: this.state.email,

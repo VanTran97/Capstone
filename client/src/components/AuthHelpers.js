@@ -1,7 +1,7 @@
 import decode from "jwt-decode";
 import axios from 'axios';
 
-export default class AuthHelperMethods {
+export default class AuthHelpers {
 
   login = (email, password) => {
     // Get a token from api server using the fetch api
@@ -15,6 +15,22 @@ export default class AuthHelperMethods {
       this.setToken(res.token); // Setting the token in localStorage
       return Promise.resolve(res);
     });
+  };
+
+  createAccount = () => {
+    var options = {
+      method: 'POST',
+      // Clears all tokens from DB
+      // To clear only current token, use /logout
+      url: 'http://localhost:3001/accounts',
+      headers: {
+        'Authorization': this.getToken(),
+      },
+    };
+    axios(options)
+      .then((data) => {
+        console.log(data);
+      })
   };
 
   loggedIn = () => {

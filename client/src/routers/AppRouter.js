@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import About from '../components/About';
 import CryptoSearchPage from '../components/CryptoSearchPage';
+import BuySell from '../components/BuySell';
+import BuyPage from '../components/BuyPage';
 import Footer from '../components/Footer';
 import Register from '../components/Register';
 import Login from '../components/Login';
@@ -16,6 +18,8 @@ const AppRouter = () => (
                         <Route path="/" component={Home} exact={true} />
                         <Route path="/about" component={About} exact={true} />
                         <Route path="/cryptosearch" component={CryptoSearchPage} exact={true} />
+                        <Route path="/buysell" component={BuySell} exact={true} />
+                        <Route path="/buy" component={BuyPage} exact={true} />
                         <Route path="/register" component={Register} exact={true} />
                         <Route path="/login" component={Login} exact={true} />
                     </Switch>

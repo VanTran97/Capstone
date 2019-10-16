@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import AuthHelperMethods from './AuthHelperMethods';
+import AuthHelpers from './AuthHelpers';
 import withAuth from './withAuth';
 
 class Logout extends Component {
 
-    Auth = new AuthHelperMethods();
+    Auth = new AuthHelpers();
 
     handleLogout = () => {
         this.Auth.logout()

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from './Header';
 
 /* We want to import our 'AuthHelperMethods' component in order to send a login request */
-import AuthHelperMethods from './AuthHelperMethods';
+import AuthHelpers from './AuthHelpers';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
 
     /* In order to utilize our authentication methods within the AuthService class, we want to instantiate a new object */
-    Auth = new AuthHelperMethods();
+    Auth = new AuthHelpers();
 
     state = {
         email: "",
@@ -37,8 +37,9 @@ class Login extends Component {
                 }
                 this.props.history.replace('/');
             })
-            .catch(err => {
-                alert(err);
+            .then((result) => {
+                this.Auth.createAccount();
+                return result;
             })
     }
 
