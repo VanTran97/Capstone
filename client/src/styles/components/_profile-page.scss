@@ -1,0 +1,26 @@
+$cyan5: #22b8cf;
+$grey6: #868e96;
+$grey3: #dee2e6;
+$grey8: #343a40;
+$grey1: #f1f3f5;
+
+.vertical-menu {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .vertical-menu button {
+    background-color: $grey1;
+    color: $grey8;
+    padding: 16px;
+    text-decoration: none;
+    border: none;
+  }
+  
+  .vertical-menu button:hover {
+    background-color: $grey3;
+  }
+
+  *:focus {
+    outline: none;
+}
