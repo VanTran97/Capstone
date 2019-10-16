@@ -65,12 +65,15 @@ class BuySell extends Component {
             <div>
                 <Header />
                 <div className="body">
+                    <div className="balance-box">
+                    <span className="buysell-balance">Current Balance: {this.state.account.balance}</span>
+                    </div>
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Coin</th>
+                                <th className="th-coin">Coin</th>
                                 <th></th>
-                                <th>Rate</th>
+                                <th className="th-rate">Rate</th>
                                 <th></th>
                             </tr>
                         </thead>
