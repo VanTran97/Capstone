@@ -31,7 +31,7 @@ class Newz extends Component {
 
   render() {
     const NewsItem = (article, id) => (
-      <li key={id}><a href={`${article.url}`}>{article.title}</a></li>
+      <li key={id}><a href={`${article.url}`} target="_blank">{article.title}</a></li>
     );
 
     const newsItems = this.state.newsItems.map(e => NewsItem(e, pushid()));

@@ -2,6 +2,8 @@
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
+  border-style: solid;
+  background-color: floralwhite;
 }
 
 .Newz-title {
@@ -26,5 +28,5 @@
 
 .news-items li {
   margin-bottom: 10px;
-  list-style-type: circle;
+  list-style-type: square;
 }
