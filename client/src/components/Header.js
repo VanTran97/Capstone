@@ -20,6 +20,7 @@ class Header extends Component {
                         <div className="header__nav">
                             <NavLink to="/" activeClassName="is-active">Home</NavLink>
                             {this.Auth.loggedIn() && <NavLink to="/cryptosearch" activeClassName="is-active">Crypto Search</NavLink>}
+                            {this.Auth.loggedIn() && <NavLink to="/graph" activeClassName="is-active">Graph</NavLink>}
                             {this.Auth.loggedIn() && <NavLink to="/buysell" activeClassName="is-active">Buy/Sell</NavLink>}
                             {this.Auth.loggedIn() && <NavLink to="/profile" activeClassName="is-active">Profile</NavLink>}
                             <NavLink to="/about" activeClassName="is-active">About</NavLink>
