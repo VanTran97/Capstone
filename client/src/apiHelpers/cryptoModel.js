@@ -4,7 +4,7 @@ export const getCryptos = () => {
 
     var options = {
         method: 'GET',
-        url: 'https://crypto-game-development.herokuapp.com/cryptos'
+        url: 'https://crypto-game-capstone.herokuapp.com/cryptos'
     };
 
     return (

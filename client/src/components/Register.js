@@ -22,7 +22,7 @@ export default class Register extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post("https://crypto-game-development.herokuapp.com/users/", {
+        axios.post("https://crypto-game-capstone.herokuapp.com/users/", {
             username: this.state.name,
             email: this.state.email,
             password: this.state.password
