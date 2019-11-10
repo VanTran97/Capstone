@@ -9,6 +9,7 @@ import ProfilePage from '../components/ProfilePage';
 import Footer from '../components/Footer';
 import Register from '../components/Register';
 import Login from '../components/Login';
+import Graph from '../components/Graph';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -19,6 +20,7 @@ const AppRouter = () => (
                         <Route path="/" component={Home} exact={true} />
                         <Route path="/about" component={About} exact={true} />
                         <Route path="/cryptosearch" component={CryptoSearchPage} exact={true} />
+                        <Route path="/graph" component={Graph} exact={true} />
                         <Route path="/buysell" component={BuySell} exact={true} />
                         <Route path="/profile" component={ProfilePage} exact={true} />
                         <Route path="/buy" component={BuyPage} exact={true} />
