@@ -1,0 +1,23 @@
+$grey8: #343a40;
+$grey7: #495057;
+$grey6: #868e96;
+
+.home-content {
+    padding: 18px 0 18px 0;
+}
+
+.login-button a, .register-button a {
+    text-decoration: none;
+    border: 1px solid $grey7;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    background-color: white;
+    color: $grey8;
+    font-size: 11px;
+    line-height: 1.3;
+    margin: 8px 0 8px 0;
+    padding: 8px;
+    appearance: none;
+    text-align: left;
+    width: 25%;
+    display: inline-block;
+}

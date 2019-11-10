@@ -1,11 +1,16 @@
 {
   "name": "crypto-game",
   "version": "1.0.0",
-  "description": "Programming Project",
-  "main": "index.js",
+  "description": "",
+  "main": "./api/src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "client-install": "npm install --prefix client",
+    "api-install": "npm install --prefix api",
+    "start": "node ./api/src/app.js",
+    "server": "nodemon ./api/src/app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install --prefix api && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -19,16 +24,6 @@
   },
   "homepage": "https://github.com/s3604175/Crypto-Game#readme",
   "dependencies": {
-    "bcrypt": "^3.0.6",
-    "express": "^4.17.1",
-    "hbs": "^4.0.4",
-    "jsonwebtoken": "^8.5.1",
-    "mongodb": "^3.3.2",
-    "mongoose": "^5.7.1",
-    "request": "^2.88.0",
-    "validator": "^11.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.2"
+    "concurrently": "^4.1.2"
   }
 }

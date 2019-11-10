@@ -1,0 +1,38 @@
+$cyan5: #22b8cf;
+$grey6: #868e96;
+$grey3: #dee2e6;
+$grey8: #343a40;
+$grey1: #f1f3f5;
+
+.header {
+  // position: sticky; 
+  // top: 0;
+  margin-top: 16px;
+  margin-bottom: 48px; 
+}
+ 
+  .header__title {
+    text-decoration: none;
+    h1 {
+      color: $grey8;
+      font-size: 64px;
+      margin-bottom: 16px;
+      }
+  }
+
+  .header__nav {
+    background-color: $grey1;
+    padding: 16px;
+    a {
+      color: $grey6;
+      margin-right: 16px;
+      text-decoration: none;
+      padding: 16px;
+    }
+  }
+
+  .header__nav {
+    a:hover {
+      background-color: $grey3;
+    }
+  }
