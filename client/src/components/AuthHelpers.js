@@ -5,7 +5,7 @@ export default class AuthHelpers {
 
   login = (email, password) => {
     // Get a token from api server using the fetch api
-    return this.fetch(`http://localhost:3001/users/login`, {
+    return this.fetch(`https://crypto-game-development.herokuapp.com/users/login`, {
       method: "POST",
       body: JSON.stringify({
         email,
@@ -22,7 +22,7 @@ export default class AuthHelpers {
       method: 'POST',
       // Clears all tokens from DB
       // To clear only current token, use /logout
-      url: 'http://localhost:3001/accounts',
+      url: 'https://crypto-game-development.herokuapp.com/accounts',
       headers: {
         'Authorization': this.getToken(),
       },
@@ -68,7 +68,7 @@ export default class AuthHelpers {
         method: 'POST',
         // Clears all tokens from DB
         // To clear only current token, use /logout
-        url: 'http://localhost:3001/users/logoutAll',
+        url: 'https://crypto-game-development.herokuapp.com/users/logoutAll',
         headers: {
           'Authorization': this.getToken(),
         },

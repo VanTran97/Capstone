@@ -4,7 +4,7 @@ export const getCryptos = () => {
 
     var options = {
         method: 'GET',
-        url: 'http://localhost:3001/cryptos'
+        url: 'https://crypto-game-development.herokuapp.com/cryptos'
     };
 
     return (
