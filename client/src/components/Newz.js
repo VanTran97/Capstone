@@ -8,7 +8,7 @@ class Newz extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/live')
+    fetch('https://crypto-game-development.herokuapp.com/live')
       .then(response => response.json())
       .then(articles => {
         this.setState({

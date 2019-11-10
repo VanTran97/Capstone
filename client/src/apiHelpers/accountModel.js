@@ -6,7 +6,7 @@ const Auth = new AuthHelpers();
 const getAccount = () => {
     const options = {
         method: 'GET',
-        url: 'http://localhost:3001/accounts',
+        url: 'https://crypto-game-development.herokuapp.com/accounts',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': Auth.getToken(),
@@ -29,7 +29,7 @@ const updateBalance = (id, balance) => {
     const options = {
         method: 'PATCH',
         data: { balance },
-        url: 'http://localhost:3001/accounts/' + id,
+        url: 'https://crypto-game-development.herokuapp.com/accounts/' + id,
         headers: {
             'Authorization': Auth.getToken(),
         },
@@ -51,7 +51,7 @@ const addTransaction = (id, type, base, name, amount) => {
     const options = {
         method: 'PATCH',
         data: { type, base, name, amount },
-        url: 'http://localhost:3001/accounts/addtransaction/' + id,
+        url: 'https://crypto-game-development.herokuapp.com/accounts/addtransaction/' + id,
         headers: {
             'Authorization': Auth.getToken(),
         },
@@ -73,7 +73,7 @@ const addAsset = (id, base, name, amount) => {
     const options = {
         method: 'PATCH',
         data: { base, name, amount },
-        url: 'http://localhost:3001/accounts/addAsset/' + id,
+        url: 'https://crypto-game-development.herokuapp.com/accounts/addAsset/' + id,
         headers: {
             'Authorization': Auth.getToken(),
         },
