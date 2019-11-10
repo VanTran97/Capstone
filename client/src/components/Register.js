@@ -26,7 +26,7 @@ export default class Register extends Component {
 
         e.preventDefault();
 
-        axios.post("http://localhost:3001/users/", {
+        axios.post("users/", {
             username: this.state.name,
             email: this.state.email,
             password: this.state.password

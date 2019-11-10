@@ -5,7 +5,7 @@ export default class AuthHelperMethods {
 
   login = (email, password) => {
     // Get a token from api server using the fetch api
-    return this.fetch(`http://localhost:3001/users/login`, {
+    return this.fetch(`users/login`, {
       method: "POST",
       body: JSON.stringify({
         email,
@@ -52,7 +52,7 @@ export default class AuthHelperMethods {
         method: 'POST',
         // Clears all tokens from DB
         // To clear only current token, use /logout
-        url: 'http://localhost:3001/users/logoutAll',
+        url: 'users/logoutAll',
         headers: {
           'Authorization': this.getToken(),
         },

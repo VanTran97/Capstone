@@ -17,7 +17,7 @@ cryptoForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('http://localhost:3001/crypto?crypto=' + crypto + '&currency=' + currency)
+    fetch('http://crypto-g-test.herokuapp.com/crypto?crypto=' + crypto + '&currency=' + currency)
     .then((response) => {
         response.json()
         .then((data) => {
