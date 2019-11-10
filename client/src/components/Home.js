@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Newz from './Newz';
 
 /* Once the 'Authservice' and 'withAuth' componenets are created, import them into Home.js */
 import AuthHelpers from './AuthHelpers';
