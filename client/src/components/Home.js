@@ -37,7 +37,6 @@ class Home extends Component {
             <div className="top-section">
               <h1>Welcome, {name}</h1>
             </div>
-            <Newz />
             <div className="bottom-section">
               <button onClick={this._handleLogout}>LOGOUT</button>
             </div>
